@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "k8scluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "k8scluster"
+    spec:
+      containers:
+        - name: "k8scluster"
+          image: "azcr01.azurecr.io/k8scluster"
+          ports:
+          - containerPort: 80
